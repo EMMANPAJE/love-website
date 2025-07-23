@@ -1,0 +1,65 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  background: linear-gradient(135deg, #1a001a, #330033);
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  position: relative;
+  height: 100vh;
+}
+
+#background-heart {
+  position: fixed;
+  font-size: 200px;
+  opacity: 0.1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+#name-tag {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 30px;
+  color: white;
+  z-index: 2;
+}
+
+.falling-text {
+  position: absolute;
+  white-space: nowrap;
+  font-size: 24px;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 5px #fff, 0 0 10px pink, 0 0 15px violet;
+  animation: fall 10s linear infinite, glow 4s linear infinite;
+}
+
+.falling-photo {
+  position: absolute;
+  width: 100px;
+  height: auto;
+  animation: fall 12s linear infinite;
+  z-index: 1;
+}
+
+@keyframes fall {
+  0% {
+    top: -10%;
+    opacity: 1;
+  }
+  100% {
+    top: 110%;
+    opacity: 0;
+  }
+}
+
+@keyframes glow {
+  0% { color: white; }
+  25% { color: pink; }
+  50% { color: violet; }
+  75% { color: pink; }
+  100% { color: white; }
+}
